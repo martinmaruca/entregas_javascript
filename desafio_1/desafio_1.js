@@ -38,17 +38,26 @@ while(i < 11) {
     i++
 }  
 
+// bucle do while
+
+console.log("---BUCLE DO WHILE---");
+
+let contador = 0;
+
+do{
+    console.log(contador);
+    contador++
+}while(contador < 11); 
+
+
 // bucle for
- 
-let z 
 
 console.log("---BUCLE FOR---");
 
-for( z = 0; z<11; z++) {
+for( let z = 0; z<11; z++) {
     console.log(z);
 }   
 
 
-// c)
 
 
