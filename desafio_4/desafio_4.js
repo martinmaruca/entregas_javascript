@@ -96,23 +96,4 @@ listaProductos.find((Object) => {
 
 
 
-/* const eleccion = listaProductos.forEach((Object) => {
-  if (Object.id === producto1) {
-    let valor = Object.precio;
-    console.log(valor);
-  }
-});
 
-const eleccion1 = listaProductos.forEach((Object) => {
-  if (Object.id === producto2) {
-    let valor = Object.precio;
-    return console.log(valor);
-  }
-});
-
-const eleccion2 = listaProductos.forEach((Object) => {
-  if (Object.id === producto3) {
-    let valor = Object.precio;
-    console.log(valor);
-  }
-}); */
