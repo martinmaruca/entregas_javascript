@@ -114,16 +114,30 @@ img {
 .activo {
     background-color: var(--primary);
 }
-
-.navegcion .carrito_icono{
-    align-items: center;
+.navegacion__carro {
+    
+    position: relative;
 }
-
-.carrito_icono {
+.navegacion__carro .carro__icono{
+    align-items: center;
+    position: relative;
+}
+.carro__icono {
     width: 3rem;
     height: 3rem;
     padding: .5rem;
     color: var(--primary);
+}
+.navegacion__carroCantidad {
+    background-color: var(--negro);
+    color: var(--blanco);
+    padding: 2px;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 1.3rem;
+    position: absolute;
+    top: -15px;
+    right: -10px;
 }
 
 .modelo {
@@ -240,6 +254,25 @@ img {
     transition-duration: .3s;
 }
 .producto__agregar-carrito:hover {
+    background-color: var(--negro);
+    cursor: pointer;
+}
+.producto__btn {
+    margin-top: 3rem;
+    display: block;
+    background-color: var(--primary);
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+    text-align: center;
+    padding: 2rem 2rem;
+    color: var(--blanco);
+    font-size: 1.6rem;
+    font-weight: 700;
+    transition-property: background-color;
+    transition-duration: .3s;
+}
+.producto__btn:hover {
     background-color: var(--negro);
     cursor: pointer;
 }

@@ -89,36 +89,64 @@ const productos = [
   ]
 
 
-  
-  const botones = document.querySelectorAll('.boton');
-  console.log(botones);
-
+  //-----------------------------prueba-------------------------
   let descripcion = document.getElementById("descripcion");
+  let id = 5;
+  
+  const botones = document.getElementById("boton");
+    console.log(botones);
+    botones.addEventListener("click", mostrarProducto());
+    botones.onclick = mostrarProducto(6);
+  
 
-   console.log(descripcion);
+    function mostrarProducto(id) {
+      const producto = productos.find(Object => {
+          if (Object.id === id) {
+              productos.forEach (producto => {
+                  descripcion.querySelector('#descripcion img').src = producto.thumbnailUrl;
+                  descripcion.querySelector('h3').textContent = producto.title;
+                  descripcion.querySelector('p').textContent = producto.descripcion;
+                  descripcion.querySelector('.producto__precio').textContent = `$ ${producto.precio}`;
+                });
+                  
+          }
+      });
+  }
+  
+  mostrarProducto();
 
+    //-----------------------------prueba-------------------------
+  
+/*    const botones = document.querySelectorAll('.boton');
+   console.log(botones); //muestra los botones */
 
-     
-    
-   
+    // let descripcion = document.getElementById("descripcion");
 
-    productos.forEach (producto => {
+  
+/*     const id = productos.find(Object => {
+      if (Object.id === id) {
+        return Object.id;
+      }
+      console.log(Object.id);
+      console.log(`${Object.title}`);
+  }); */
+
+/*    productos.forEach (producto => {
     descripcion.querySelector('#descripcion img').src = producto.thumbnailUrl;
     descripcion.querySelector('h3').textContent = producto.title;
     descripcion.querySelector('p').textContent = producto.descripcion;
     descripcion.querySelector('.producto__precio').textContent = `$ ${producto.precio}`;
+  });   */
+  
+
+
+
+
+   /*  boton.addEventListener('click', () => {
+      console.log('click');
     });
+    */
   
     
-  
-  
-
-/*   boton.addEventListener('click', () => {
-    console.log('click');
-  });
- */
-
-  
-
-// primero buscar el id del boton que se clickea y luego buscar en el array el objeto que tenga ese id 
-// despues va a la pagina producto.html y muestra el objeto que tenga ese id con los cambios correspondientes
+    // primero buscar el id del boton que se clickea y luego buscar en el array el objeto que tenga ese id 
+    // despues va a la pagina producto.html y muestra el objeto que tenga ese id con la cambios correspondientes
