@@ -27,8 +27,8 @@
                     <a class="navegacion__enlace" href="blog.html">Blog</a>
                     <a class="navegacion__enlace" href="tienda.html">Tienda</a>
                     <div class="navegacion__carro">
-                        <i class="fas fa-shopping-cart carro__icono"></i>
-                        <div class="navegacion__carroCantidad">0</div>
+                        <i class="fas fa-shopping-cart carro__icono panel-btn"></i>
+                        <div class="navegacion__carroCantidad" id="carroCantidad">0</div>
                     </div>
                 </nav>
             </div><!--.header-barra-->
@@ -50,17 +50,30 @@
         </div>
     </main>
 
+    <div class="panel">
+
+        <div id="items" class="carro__item"></div>
+    
+        <div id="botones" class="carro__botones"></div>
+        
+    </div>
+
+
     <footer class="footer">
         <div class="footer__contenedor footer__contenido">
-            <nav class="footer__nav">
-                <a class="footer__enlace" href="index.html">Inicio</a>
-                <a class="footer__enlace" href="nosotros.html">Nosotros</a>
-                <a class="footer__enlace" href="blog.html">Blog</a>
-                <a class="footer__enlace" href="tienda.html">Tienda</a>
+            <nav class="navegacion">
+                <a class="navegacion__enlace" href="index.html">Inicio</a>
+                <a class="navegacion__enlace" href="nosotros.html">Nosotros</a>
+                <a class="navegacion__enlace" href="blog.html">Blog</a>
+                <a class="navegacion__enlace" href="tienda.html">Tienda</a>
             </nav>
             <p class="footer__copyright">Todos los derechos reservados</p>
         </div>
     </footer>
 
+    <script src="js/index.js" type="module"></script>
+    <script src="js/panelCarro.js"></script>
+    <script src="js/datos.js"></script>
+    <script src="js/carro.js"></script>
 </body>
 </html>
