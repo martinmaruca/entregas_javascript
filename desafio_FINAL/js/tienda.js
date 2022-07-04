@@ -1,7 +1,8 @@
 
 let tienda = document.getElementById('tienda');
-
 let canasta = JSON.parse(localStorage.getItem("datos")) || [];
+
+// Productos Tienda
 
 let tarjeta =()=>{
     return (tienda.innerHTML = productoDatos.map((producto)=>{
@@ -14,7 +15,7 @@ let tarjeta =()=>{
             <div class="producto__contenido">
                 <h3 class="producto__nombre">${nombre}</h3>
                 <p class="producto__descripcion">${descripcion}</p>
-                <p class="producto__precio">${precio}</p>
+                <p class="producto__precio">$ ${precio}</p>
                 <a onclick="incremento(${id})" class="producto__btn" id=${id} href="#">Agregar al Carrito</a>
             </div>
         </div>
@@ -51,3 +52,5 @@ let calcular = () =>{
 };
 
 calcular();
+
+

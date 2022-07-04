@@ -538,3 +538,46 @@ img {
     text-align: center;
     margin: 0;
 }
+
+#total {
+    width: 50%;
+    border: solid 3px var(--primary);
+    border-radius: 5px; 
+    background-color: var(--blanco); 
+}
+
+.carro__total {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.carro__total h2{
+    font-size: 1.4rem;
+    color: var(--negro);
+    width: auto;
+    padding: 1rem;
+    margin-right: 1rem;
+}
+.vaciar {
+    width: 40%;
+}
+.vaciar__btn {
+    margin-top: 2rem;
+    text-decoration: none;
+    color: var(--negro);
+    padding: 1rem 5rem;
+    border: 2px solid var(--primary);
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    transition-property: background-color;
+    transition-duration: .3s;
+    margin-left: 1rem;
+
+}
+.vaciar__btn:hover {
+    background-color: var(--primary);
+    color: var(--blanco);
+}

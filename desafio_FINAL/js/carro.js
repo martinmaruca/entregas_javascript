@@ -2,6 +2,7 @@
 
 let carroItem = document.getElementById('items');
 let carroBtn = document.getElementById('botones');
+let carrototal = document.getElementById('total');
 
 // conectando con el Local storage
 
@@ -23,27 +24,27 @@ let generarItem = () => {
         return (carroItem.innerHTML = canasta.map((item)=>{
              let { id, producto } = item;
              let buscar = productoDatos.find((info)=> info.id === id) || [];
+             let {imagen, nombre, precio} = buscar;
             return `
             <div class="item">
                 <div class="item__imagen">
-                <img src=${buscar.imagen} alt="imagen guitarra">
+                <img src=${imagen} alt="imagen guitarra">
                 </div>
                 <div class="item__contenido">
-                    <p class="item__nombre item">${buscar.nombre}</p>
+                    <p class="item__nombre item">${nombre}</p>
                     <div class="botones">
                         <i onclick="decremento(${id})" class="fas fa-minus icon item"></i>
                         <div id=${id} class="cantidad item">${producto}</div>
                         <i onclick="incremento(${id})" class="fas fa-plus icon item"></i> 
                     </div>
-                    <p class="item__precio item">$ ${buscar.precio}</p>
-                    <h3 class= "subtotal item">$ ${producto * buscar.precio}</h3>
+                    <p class="item__precio item">$ ${precio}</p>
+                    <h3 class= "subtotal item">$ ${producto * precio}</h3>
                     <i onclick="removerItem(${id})" class="fas fa-times item"></i>
                 </div>
             </div>
             `;
         }).join(""));
-    }
-    else{
+    }else{
         carroItem.innerHTML = `
         <h2 class="noHay">No hay productos en el carrito</h2>
         `;
@@ -95,6 +96,8 @@ let actualizar = (id) =>{
     let buscar = canasta.find((item)=> item.id === id);
     document.getElementById(id).innerHTML = buscar.producto;
     calcular();
+    totalAPagar();
+    localStorage.setItem("datos", JSON.stringify(canasta));
 };
 
 // removiendo el item del carrito
@@ -103,10 +106,19 @@ let removerItem =(id)=>{
     let selectItem = id;
     canasta = canasta.filter((item)=> item.id !== selectItem);
     generarItem();
+    totalAPagar();
+    calcular();
     localStorage.setItem("datos", JSON.stringify(canasta)); 
 } 
 
-removerItem();
+// vaciar el carrito
+
+let vaciarCarrito = () =>{
+    canasta = [];
+    generarItem();
+    calcular();
+    localStorage.setItem("datos", JSON.stringify(canasta));
+};
 
 //Calcula el total a pagar
 
@@ -116,10 +128,19 @@ let totalAPagar = () =>{
             let { id, producto } = item;
             let buscar = productoDatos.find((info)=> info.id === id) || [];
             return  producto * buscar.precio;
-    }).reduce((a,b)=>a+b,0); 
-    carroItem.innerHTML = `
-     <h2 class="item__contenido carro__item">Total a pagar: $ ${total}</h2>
-     `;
+        })
+        .reduce((a,b)=> a + b, 0); 
+        carrototal.innerHTML = `
+        <div class="carro__total">
+        <div>
+        <a onclick="vaciarCarrito()" class="vaciar__btn" href="#">Vaciar Carro</a>
+        </div>
+        <div>
+        <h2>Total a pagar: $ ${total}</h2>
+        </div>
+        </div>
+         `; 
 }else return;
 }
+totalAPagar();
 
