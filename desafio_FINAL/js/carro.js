@@ -44,13 +44,20 @@ let generarItem = () => {
             </div>
             `;
         }).join(""));
-    }else{
-        carroItem.innerHTML = `
-        <h2 class="noHay">No hay productos en el carrito</h2>
-        `;
-        carroBtn.innerHTML = ``;
-    }
-};
+    }if(canasta.length ==0){
+        const vacio = () =>{
+            swal({
+                title: 'Carrito vacio',
+                text: 'No hay productos en el carrito',
+                icon: 'warning',
+                confirmButtonText: 'Aceptar'
+        })};
+
+        let notificacion = document.getElementById('btn');
+        btn.addEventListener('click', vacio);
+       };
+    };    
+
 
 generarItem(); 
 
@@ -141,6 +148,6 @@ let totalAPagar = () =>{
         </div>
          `; 
 }else return;
-}
+};
 totalAPagar();
 
