@@ -59,7 +59,7 @@ let generarItem = () => {
     };    
 
 
-generarItem(); 
+ generarItem(); 
 
 // incrementando el carrito
 
