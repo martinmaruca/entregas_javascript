@@ -1,3 +1,24 @@
+// Obtenindo datos de local json
+
+const json='js/datos.json';
+
+const productoDatos = []; {
+
+fetch (json)
+.then(res => res.json())
+.then(data => {
+            return data.map((producto)=>{
+                let {id,precio,nombre,imagen} = producto;
+                productoDatos.push({
+                    id,
+                    precio,
+                    nombre,
+                    imagen
+                });
+            });
+            });
+};
+
 // uniendo entre el js y el html
 
 let carroItem = document.getElementById('items');
@@ -150,4 +171,3 @@ let totalAPagar = () =>{
 }else return;
 };
 totalAPagar();
-

@@ -1,7 +1,7 @@
 export default function carroLista(panelbtn, panel) {
   const d = document;
 
-  d.addEventListener("click",e => {
+  d.addEventListener("click", e => {
     if(e.target.matches(panelbtn)){ 
         d.querySelector(panel).classList.toggle("is-active");
   }if(canasta.length ==0){
@@ -9,3 +9,4 @@ export default function carroLista(panelbtn, panel) {
   } 
 });
 }
+

@@ -2,6 +2,7 @@
 let tienda = document.getElementById('tienda');
 let canasta = JSON.parse(localStorage.getItem("datos")) || [];
 const url='js/datos.json';
+
 // Productos Tienda
 
 fetch(url)
@@ -25,33 +26,11 @@ fetch(url)
                  </div>
                  `;
              }).join("")); 
-         };
+        };
          tarjeta()
-     });  
+    });  
     
 });
-
-
-
-/* let tarjeta =()=>{
-    return (tienda.innerHTML = productoDatos.map((producto)=>{
-        let {id,precio,nombre,descripcion,imagen} = producto;
-        let buscar = canasta.find((item)=> item.id === id) || [];
-        return`
-        <div class="producto" id=producto-id-${id}>
-            <img class="producto__imagen" src="${imagen}" alt="imagen guitarra">
-    
-            <div class="producto__contenido">
-                <h3 class="producto__nombre">${nombre}</h3>
-                <p class="producto__descripcion">${descripcion}</p>
-                <p class="producto__precio">$ ${precio}</p>
-                <a onclick="incremento(${id})" class="producto__btn" id=${id} href="#">Agregar al Carrito</a>
-            </div>
-        </div>
-        `;
-    }).join("")); 
-};
-tarjeta()  */
 
 
 // incrementa la cantidad de productos en el carrito
